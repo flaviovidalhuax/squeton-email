@@ -9,6 +9,6 @@ const transporter = nodemailer.createTransport({
         user: 'flaviovidalhuax@gmail.com',
         pass: config.api.emailPass
     }
-})
+}) 
 
 module.exports = transporter

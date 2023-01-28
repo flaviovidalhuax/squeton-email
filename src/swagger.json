@@ -1,0 +1,8 @@
+{ 
+    "openapi":"3.0.0",
+    "info":{
+    "title":"squeleton-email",
+    "description":"proyecto creado con express manejando una apqi que envia email"
+            }
+
+}
