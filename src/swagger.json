@@ -1,8 +1,35 @@
-{ 
-    "openapi":"3.0.0",
-    "info":{
-    "title":"squeleton-email",
-    "description":"proyecto creado con express manejando una apqi que envia email"
-            }
 
-}
+    {
+        "openapi":"3.0.0",
+        "info":{
+            "title":"squeleton-email",
+            "description":"proyecto creado con express manejando una API, que envia email al usuario creado  url: [http://localhost:9000/api/v1](http://localhost:9000/api/v1)"
+        },
+        "server":[
+            {
+                "url":"http://localhost:9000/api/v1"
+            }
+        ],
+        "paths":{
+            "/users":{
+                "get":{
+                "summary":"retorna un alista de todos lod usarios",
+                "responses":{
+                    "200":{"description":"lista de usarios"},
+                    "400":{"description":"error de squalese"}
+                }
+                },
+                "post":{
+                    "summary":"crea un nuevo usario",
+                    "responses":{
+                        "200":{"description":"creacion de un nuevo usarios"},
+                        "400":{"description":" error al crear usuario"}
+                    }
+                  
+                           
+                }
+               
+            }
+    
+        }
+    }

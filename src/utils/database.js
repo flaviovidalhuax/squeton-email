@@ -1,5 +1,7 @@
 const { Sequelize } = require('sequelize')
-const config = require('../../config')
+const config = require('../../config') 
+//!activar 
+require('dotenv').config()
 
 const db = new Sequelize({
     dialect: 'postgres',
@@ -8,11 +10,11 @@ const db = new Sequelize({
     password: config.db.pass,
     database: config.db.name,
     port: config.db.port,
-    dialectOptions: process.env.NODE_ENV === 'production'
+    dialectOptions: process.env.NODE_ENV === 'production'//! configuracion para rederizar
     ?{
         require: true,
         rejectUnathorizaed:false
-    }:{}
+    }:{}                                                 //!edn
 })
 
 
