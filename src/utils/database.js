@@ -13,7 +13,7 @@ const db = new Sequelize({
     dialectOptions: process.env.NODE_ENV === 'production'//! configuracion para rederizar
     ?{
         require: true,
-        rejectUnathorizaed:false
+        rejectUnauthorized:false
     }:{}                                                 //!edn
 })
 
