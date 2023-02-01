@@ -12,8 +12,10 @@ const db = new Sequelize({
     port: config.db.port,
     dialectOptions: process.env.NODE_ENV === 'production'//! configuracion para rederizar
     ?{
-        require: true,
-        rejectUnauthorized:false
+        ssl:{
+            require: true,
+            rejectUnauthorized:false
+        }
     }:{}                                                 //!edn
 })
 
