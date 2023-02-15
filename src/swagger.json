@@ -3,20 +3,46 @@
         "openapi":"3.0.0",
         "info":{
             "title":"squeleton-email",
-            "description":"proyecto creado con express manejando una API, que envia email al usuario creado  url: [http://localhost:9000/api/v1](http://localhost:9000/api/v1)"
+            "description":"proyecto creado con express manejando una API, que envia email al usuario creado  url: [http://localhost:9000/api/v1](http://localhost:9000/api/v1)",
+            "version":"0.0.1"
         },
+        "host":"localhost:9000",
+        "basePath":"/api/v1",
         "server":[
             {
-                "url":"http://localhost:9000/api/v1"
+                "url":"http://localhost:9000/api/v1",
+                "description":"url the aplication"
+               
             }
         ],
         "paths":{
             "/users":{
                 "get":{
-                "summary":"retorna un alista de todos lod usarios",
+                "summary":"Get all Users",
+                "parameters":{
+                    "in":[{
+                        "name":"users",
+                        "schema":{
+                            "type":"integer"
+                        },
+                        "required":true,
+                        "description":"Get all user has been created"
+
+                    }]
+                },
                 "responses":{
-                    "200":{"description":"lista de usarios"},
-                    "400":{"description":"error de squalese"}
+                    "200":{
+                        "description":"getting all users succesfull",
+                        "content":{
+                            "aplication/json":{
+                                "schema":{
+                                    "type":"object"
+                                    
+                                }
+                            }
+                        }
+                    },
+                    "400":{"description":"bad request"}
                 }
                 },
                 "post":{
@@ -33,3 +59,4 @@
     
         }
     }
+

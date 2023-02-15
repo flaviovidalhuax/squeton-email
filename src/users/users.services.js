@@ -61,7 +61,7 @@ const postUser = (req, res) => {
                 password: 'String',
                 gender: 'String',
                 birthday: 'YYYY/MM/DD'
-            }})
+            }}) 
         })
 }
 
@@ -87,7 +87,7 @@ const patchMyUser = (req, res) => {
     const id = req.user.id
     const { firstName, lastName, gender, birthday } = req.body
     userControllers.updateUser(id, {firstName, lastName, gender, birthday})
-        .then(() => {
+        .then((data) => {
             res.status(200).json({message: 'Your user was edited succesfully!'})
         })
         .catch((err) => {

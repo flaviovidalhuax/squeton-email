@@ -1,17 +1,24 @@
-Punto de partida
+### Api skeleton 
+   - [x] this is the point when yuo  want create a new proyect.  
+- [https://esqueleton-email.onrender.com] this is my first API in deply and this my skeleton for to work in other aplication and reduce work.
+- creat the swagger and front user could use for navigate. [https://esqueleton-email.onrender.com/docs]
 
-Cuando queremos recuperar una contraseña hago una peticion que me pide el email
-
-/api/v1/auth/recovery-password
+### - route:[https://esqueleton-email.onrender.com/api/v1/]
+    - basepath:/api/v1/auth/recovery-password
+    - if you want to recovery a password and make to get that email give me. 
+ 
+### - route for creat password [https://esqueleton-email.onrender.com/api/v1/auth/recovery-password]
 - post crear un nuevo recovery password
     - Llegar el correo electronico 
     - Link que te permite hacer una peticion para actualizar tus datos
 
-/api/v1/auth/recovery-password/:id
-- patch actualizar la contraseña validando el enlace del recovery password
-    - cuando mandamos la nueva contraseña pasan 2 cosas
-        - Se modifica la contraseña en el usuario
-        - Se modifica el recoveryToken como ya usado, para que no se pueda volver a utilizar
+### - route for recovery password [https://esqueleton-email.onrender.com/api/v1/auth/recovery-password/:id]
+- basepath: /api/v1/auth/recovery-password/:id
+- patch is for recovery pasword if you lost 
+    - when send the new password to wappend two things:
+        - the user password is modificared. 
+        - the recovery Token is modififcared and yuo don't use again. 
+
 
 
 
