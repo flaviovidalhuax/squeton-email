@@ -8,7 +8,7 @@
         },
         "servers": [
             {
-              "url": "http://localhost:9000/api/v1"
+              "url": "https://esqueleton-email.onrender.com/api/v1"
             }
           ],
         "paths":{
