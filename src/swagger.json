@@ -6,47 +6,32 @@
             "description":"proyecto creado con express manejando una API, que envia email al usuario creado  url: [http://localhost:9000/api/v1](http://localhost:9000/api/v1)",
             "version":"0.0.1"
         },
-        "host":"localhost:9000",
-        "basePath":"/api/v1",
-        "server":[
+        "servers": [
             {
-                "url":"http://localhost:9000/api/v1",
-                "description":"url the aplication"
-               
+              "url": "http://localhost:9000/api/v1"
             }
-        ],
+          ],
         "paths":{
             "/users":{
                 "get":{
                 "summary":"Get all Users",
-                "parameters":{
-                    "in":[{
-                        "name":"users",
-                        "schema":{
-                            "type":"integer"
-                        },
-                        "required":true,
-                        "description":"Get all user has been created"
-
-                    }]
-                },
                 "responses":{
                     "200":{
-                        "description":"getting all users succesfull",
-                        "content":{
-                            "aplication/json":{
-                                "schema":{
-                                    "type":"object"
-                                    
-                                }
-                            }
-                        }
+                        "description":"getting all users succesfull"
                     },
                     "400":{"description":"bad request"}
                 }
                 },
                 "post":{
                     "summary":"crea un nuevo usario",
+                    "parameters":[
+                        {
+                            "in":"body",
+                            "name":"body",
+                            "description":"User to add base data",
+                            "required":"true"
+                        }
+                    ],
                     "responses":{
                         "200":{"description":"creacion de un nuevo usarios"},
                         "400":{"description":" error al crear usuario"}
@@ -54,7 +39,30 @@
                   
                            
                 }
-               
+            },
+            "/users/:id":{
+                "get":{
+                    "tags": [
+                        "user/id"
+                        ],
+                    "summary":"Get user by ID",
+                    "parameters":[
+                            {
+                            "name": "userId",
+                            "in": "path",
+                            "description": "find user by ID",
+                            "required": true,
+                            "type": "string"
+                            }
+                    ],
+                    "responses":{
+                        "200":{
+                            "description":"getting all users succesfull"
+                        },
+                        "404":{"description":"id dont found"},
+                        "400":{"description":"bad request"}
+                    }
+                    }
             }
     
         }
